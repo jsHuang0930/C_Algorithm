@@ -16,6 +16,43 @@
  * };
  */
 
+// class Solution {
+// public:
+//     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+//         ListNode *l,*p;
+//         l=new ListNode;
+//         l->next=NULL;
+//         p = l;
+//         int flag = 0;
+
+//         while (l1!= NULL && l2 != NULL) {
+//             int _p = l1->val + l2->val + flag;
+
+//             p->next->val = _p % 10;
+
+//             if (_p >= 10)
+//                 flag = 1;
+//             else
+//                 flag = 0;
+//             l1 = l1->next;
+//             l2 = l2->next;
+//         }
+//         if (l1==NULL&&l2!=NULL)
+//         {
+//             p=l2;
+//             l2->val+=flag;
+//         }
+//         else if (l2==NULL&&l1!=NULL)
+//         {
+//             p=l1;
+//             l1->val+=flag;
+//         }
+        
+//         return l;
+        
+//     }
+// };
+
 
 // class Solution {
 // public:
@@ -81,24 +118,5 @@
 //         return head->next;
 //     }
 // };
-
-class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int temp = 0;
-        ListNode l3 = new ListNode(0);
-        ListNode p = l3;
-        while(l1 != null || l2 != null || temp != 0){
-        int l1Val = l1 != null ? l1.val : 0;
-        int l2Val = l2 != null ? l2.val : 0;
-        int sumVal = l1Val + l2Val + temp;
-        temp = sumVal/10;
-        p.next = new ListNode(sumVal%10);
-        p = p.next;
-        if(l1 != null) l1 = l1.next;
-        if(l2 != null) l2 = l2.next;
-        }
-        return l3.next;
-    }
-}
 
 // @lc code=end
