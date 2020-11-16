@@ -53,7 +53,7 @@ using namespace std;
 
 class Solution
 {
-// 一遍hash,边存边找
+// 一遍hash,边存bian
 public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
