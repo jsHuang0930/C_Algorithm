@@ -50,7 +50,7 @@ public:
 };
 
 // class Solution {
-// //编译错误
+// 编译错误
 // public:
 //     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
 //         ListNode *l=new ListNode(-1);
