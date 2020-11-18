@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <stdio.h>
 const int maxsize = 100001;
 int main()
 {
