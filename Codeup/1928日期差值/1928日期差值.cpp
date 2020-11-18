@@ -5,9 +5,7 @@ int main(){
   // scanf("%s%s%s%s%s%s",year1,mon1,date1,year2,mon2,date2);
   // printf("%s%s%s%s%s%s",year1,mon1,date1,year2,mon2,date2);
   char date1[8],date2[8];
-  gets(date1,4);
-  //gets_s(date2,4);
-  puts(date1);
-
+  scanf("%s%s",date1,date2);
+  
   
 }
