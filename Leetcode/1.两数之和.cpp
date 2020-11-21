@@ -3,14 +3,12 @@
  *
  * [1] 两数之和
  */
-
+#include <vector>
+#include <map>
+using namespace std;
 // @lc code=start
 
-#include <vector>
-using namespace std;
-
-// class Solution {
-// 暴力解法，提交超时
+// class Solution {// 暴力解法，提交超时
 // public:
 //     vector<int> twoSum(vector<int>& nums, int target) {
 //         int i, j;
@@ -25,9 +23,7 @@ using namespace std;
 //     }
 // };
 
-// class Solution
-// {
-//     // 两遍hash
+// class Solution{// 两遍hash
 // public:
 //     vector<int> twoSum(vector<int> &nums, int target)
 //     {
@@ -51,9 +47,7 @@ using namespace std;
 //     }
 // };
 
-class Solution
-{
-// 一遍hash,边存边找
+class Solution{// 一遍hash,边存边找
 public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
@@ -61,7 +55,7 @@ public:
         vector<int> b(2, -1); //用来承载结果，初始化一个大小为2，值为-1的容器b
         for (int i = 0; i < nums.size(); i++)
         {
-            if (a.count(target - nums[i]) > 0)
+            if (a.count(target - nums[i]) > 0)//map.count(Key),判断键值元素是否存在,返回值为1或者0
             { // map中存在
                 b[0] = a[target - nums[i]];
                 b[1] = i;
