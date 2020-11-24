@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**"
             ],
-            "compilerPath": "D:\\download\\Dev-C++\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+            "compilerPath": "D:\\Download\\MinGW\\mingw64\\bin\\g++.exe",
             "intelliSenseMode": "clang-x86",
             "cStandard": "c11",
             "cppStandard": "c++17"
