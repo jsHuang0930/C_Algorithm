@@ -23,7 +23,7 @@ public:
     }
 };
 
-/* class Solution {
+class Solution {
 //二分查找+位运算
 public:
     int countNodes(TreeNode* root) {
@@ -61,6 +61,6 @@ public:
         }
         return node != nullptr;
     }
-}; */
+};
 // @lc code=end
 
