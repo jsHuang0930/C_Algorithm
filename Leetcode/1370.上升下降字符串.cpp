@@ -19,17 +19,17 @@ public:
 
         string ret;
         while (ret.length() < s.length())
-        {
+        { //ret.length() = s.length()时停止循环
             for (int i = 0; i < 26; i++)
-            {
+            { //从小到大
                 if (num[i])
                 {
                     ret.push_back(i + 'a');
-                    num[i]--;
+                    num[i]--; //第i个字符计数减一
                 }
             }
             for (int i = 25; i >= 0; i--)
-            {
+            { //从大到小
                 if (num[i])
                 {
                     ret.push_back(i + 'a');
