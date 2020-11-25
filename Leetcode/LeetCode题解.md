@@ -100,8 +100,8 @@ string to_string (float val);
 string to_string (double val);
 
 // to_string example  
- #include <iostream>   // std::cout  
- #include <string>     // std::string, std::to_string  
+ #include <iostream> 
+ #include <string>
   
  int main ()  
  {  
