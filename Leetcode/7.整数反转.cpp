@@ -12,7 +12,7 @@ public:
         int tmp=x;//tmp存储每次去尾数后的结果
         long long res=0;
         while (tmp!=0)
-        {
+        {//先取模10，得尾数；再除10去尾数
            res=(tmp%10)+res*10;
            //if (res>2147483648||res< -2147483647 )
            if(res>INT_MAX||res< INT_MIN)
