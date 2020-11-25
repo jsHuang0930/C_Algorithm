@@ -65,6 +65,13 @@ public:
 - 直接创建一个大小为 2626 的桶，记录每种字符的数量。每次提取最长的上升或下降字符串时，我们直接顺序或逆序遍历这个桶。
 - 具体地，在遍历桶的过程中，如果当前桶的计数值不为零，那么将当前桶对应的字符加入到答案中，并将当前桶的计数值减一即可。我们重复这一过程，直到答案字符串的长度与传入的字符串的长度相等。
 
+- string的push_back方法
+
+``` c
+    string str;
+    str.push_back
+```
+
 ## 7.整数反转
 
 - 取整数各位数 先取模10，得尾数；再除10去尾数
@@ -82,3 +89,30 @@ public:
 - 也就是说我们不能用long存储最终结果，而且有些数字可能是合法范围内的数字，但是反转过来就超过范围了。假设有1147483649这个数字，它是小于最大的32位整数2147483647的，但是将这个数字反转过来后就变成了9463847411，这就比最大的32位整数还要大了，这样的数字是没法存到int里面的，所以肯定要返回0(溢出了)。所以，我们还需要提前判断。
 
 - INT_MAX 和 INT_MIN 可直接表示int范围
+
+## 9.回文数
+
+### int转换成string---to_string函数
+
+``` cpp
+string to_string (int val);
+string to_string (float val);
+string to_string (double val);
+
+// to_string example  
+ #include <iostream>   // std::cout  
+ #include <string>     // std::string, std::to_string  
+  
+ int main ()  
+ {  
+    std::string pi = "pi is " + std::to_string(3.1415926);  
+    std::string perfect = std::to_string(1+2+4+7+14) + " is a perfect number";  
+    std::cout << pi << '\n';  
+    std::cout << perfect << '\n';  
+    return 0;  
+ }
+
+Output
+pi is 3.141593  
+28 is a perfect number
+```
