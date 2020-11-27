@@ -1,25 +1,17 @@
-#include <stdio.h>
-struct Point
-{
-    int x,y;
-    Point(){}
-    Point(int _x,int _y): x(_x), y(_y){}
+#include <bits/stdc++.h>
+using namespace std;
+// struct Point
+// {
+//     int x,y;
+//     Point(){}
+//     Point(int _x,int _y): x(_x), y(_y){}
 
-}pt[10];
+// }pt[10];
 
 int main()
 {
-    int num = 0;
-    for (int i = 1; i <=3; i++)
-    {
-        for (int j = 1; j <=3; j++)
-        {
-            pt[num++] = Point(i,j);
-        }
-    }
-    for (int i = 0; i < num; i++)
-    {
-        printf("%d,%d\n",pt[i].x,pt[i].y);
-    }
+    map<int,int> mp;
+    mp[2]++;
+    printf("%d",mp[2]);
     return 0;
 }

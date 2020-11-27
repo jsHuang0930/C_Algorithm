@@ -60,6 +60,8 @@ public:
 };
 ```  
 
+---
+
 ## 1370.完全二叉树的节点个数
 
 - 直接创建一个大小为 2626 的桶，记录每种字符的数量。每次提取最长的上升或下降字符串时，我们直接顺序或逆序遍历这个桶。
@@ -71,6 +73,8 @@ public:
     string str;
     str.push_back
 ```
+
+---
 
 ## 7.整数反转
 
@@ -89,6 +93,8 @@ public:
 - 也就是说我们不能用long存储最终结果，而且有些数字可能是合法范围内的数字，但是反转过来就超过范围了。假设有1147483649这个数字，它是小于最大的32位整数2147483647的，但是将这个数字反转过来后就变成了9463847411，这就比最大的32位整数还要大了，这样的数字是没法存到int里面的，所以肯定要返回0(溢出了)。所以，我们还需要提前判断。
 
 - INT_MAX 和 INT_MIN 可直接表示int范围
+
+---
 
 ## 9.回文数
 
@@ -116,6 +122,8 @@ Output
 pi is 3.141593  
 28 is a perfect number
 ```
+
+---
 
 ## 164.最大间距
 
@@ -145,14 +153,46 @@ pi is 3.141593
 
         >location $=\frac{\text {nums}[i]-\min (\text {nums})}{\text { 每个桶的长度 }}$
 
-## 举个栗子
+### 举个栗子
 
 - nums = [1,3,4,5,6,10,11,12,17]  
 - 每个桶的长度 = （17 - 1） / (9-1) = 2  
 - 桶的个数 = （17-1）/ 2 + 1 = 9  
 - 所以我们的桶为（左闭右开）：  
 
+---
 
+## 454.四数相加-ii
 
+### 使用hash
 
+- 一个map存储A和B中元素的组合的和的计数，然后在这个map中查找C和D的元素组合之和的相反数，找到就累加计数
+
+``` cpp
+//答案题解
+class Solution {
+public:
+    int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
+        unordered_map<int, int> countAB;
+        for (int u: A) {//注意此处的循环写法
+            for (int v: B) {
+                ++countAB[u + v];//可以看出map的value初始值为0
+            }
+        }
+        int ans = 0;
+        for (int u: C) {
+            for (int v: D) {
+                if (countAB.count(-u - v)) {//map的count()函数，返回0或1，表示是否找到，区分于find()
+                    ans += countAB[-u - v];
+                }
+            }
+        }
+        return ans;
+    }
+};
+```
+
+- for (**int u: A**) //注意此处的循环写法
+- ++countAB[u + v] //可以看出map的value初始值为0
+- if (countAB.**count(-u - v)**) //map的 **count()** 函数，返回0或1，表示是否找到，区分于find()
 
