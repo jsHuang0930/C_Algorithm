@@ -7,7 +7,7 @@
 using namespace std;
 // @lc code=start
 class Solution
-{//运行时间受限 Time Limit Exceeded
+{//Time Limit Exceeded
 public:
     int reversePairs(vector<int> &nums)
     {

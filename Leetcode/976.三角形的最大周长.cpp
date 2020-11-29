@@ -9,7 +9,7 @@ using namespace std;
 bool cmp(int a,int b){
     return a>b;
 }
-class Solution {
+class Solution {//简单题
 public:
     int largestPerimeter(vector<int>& A) {
         sort(A.begin(),A.end(),cmp);
