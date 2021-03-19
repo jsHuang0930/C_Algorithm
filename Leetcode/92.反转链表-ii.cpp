@@ -16,7 +16,7 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution {//头插法
   public:
     ListNode *reverseBetween(ListNode *head, int left, int right) {
         // 设置 dummyNode 是这一类问题的一般做法
@@ -42,3 +42,22 @@ class Solution {
 };
 
 // @lc code=end
+class Solution {//递归
+    int i = 0;
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        i++;
+        if (i == right) {
+            return head;
+        }
+        if (i < left) {
+            head.next = reverseBetween(head.next, left, right);
+            return head;
+        } else {
+            ListNode node = reverseBetween(head.next, left, right);        
+            ListNode nex = head.next.next;
+            head.next.next = head;
+            head.next = nex;
+            return node;
+        }
+    }
+}
