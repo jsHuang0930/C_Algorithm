@@ -3,12 +3,43 @@ using namespace std;
 class Solution
 {
 public:
-  int trap(vector<int> &height)
+  //方法一:对于每个位置，向左右找最高的木板；当前位置能放的水量是：左右两边最高木板的最低高度 - 当前高度
+  int trap_1(vector<int> &height)
+  {
+    int res = 0, tmp = 0;
+    int size = height.size();
+    vector<int> lmax; //左边最高的柱子
+    vector<int> rmax; //右边最高的柱子
+    //错误写法！！！越界！！！
+    // lmax[0] = 0;
+    // rmax[0] = 0;
+    lmax.push_back(0);
+    rmax.push_back(0);
+    for (int i = 1; i < size; i++)
+    {
+      //错误写法！！！越界！！！
+      //lmax[i] = max(lmax[i - 1], height[i - 1]);
+      //rmax[i] = max(rmax[i - 1], height[size - i]);
+      lmax.push_back(max(lmax[i - 1], height[i - 1]));
+      rmax.push_back(max(rmax[i - 1], height[size - i]));
+    }
+    for (int j = 0; j < size; j++)
+    {
+      tmp = min(lmax[j], rmax[size - j - 1]) - height[j]; //左右两边最高柱子的最小值 - 当前柱子的高度
+      if (tmp > 0)
+        //如果能蓄水
+        res += tmp;
+    }
+    return res;
+  }
+
+  //方法二
+  int trap_2(vector<int> &height)
   {
     int Sum = accumulate(height.begin(), height.end(), 0); // 得到柱子的体积
     int volume = 0;                                        // 总体积和高度初始化
     int high = 1;
-    int size = height.size();
+    int size = size;
     int left = 0; // 双指针初始化
     int right = size - 1;
     while (left <= right)
@@ -39,5 +70,5 @@ int main()
     if (cin.get() == '\n')    //如果是回车符则跳出循环
       break;
   }
-  cout << sol.trap(height);
+  cout << sol.trap_1(height);
 }
